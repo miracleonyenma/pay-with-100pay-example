@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray-800;
+}
+
+a {
+  @apply underline;
+}
+
+.form-control {
+  @apply py-2;
+}
+
+.form-control label {
+  @apply block;
+}
+
+.cta {
+  @apply bg-red-600 font-semibold text-white p-2 px-6 rounded-lg;
+}
