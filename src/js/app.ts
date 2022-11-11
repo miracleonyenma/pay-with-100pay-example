@@ -1,0 +1,1 @@
+import { shop100Pay } from "./app";
