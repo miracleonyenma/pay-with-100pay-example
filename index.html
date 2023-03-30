@@ -1,162 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45YE7QVX3S"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/main.css" />
 
-      gtag('config', 'G-45YE7QVX3S');
-    </script>
-  </head>
-  <body class="bg-gray-100">
-    <header class="sticky top-0 w-full p-4">
-      <div class="wrapper max-w-6xl m-auto bg-white p-4 rounded-lg">
-        <figure>
-          <h1 class="font-extrabold text-red-500">Pay with 100Pay</h1>
-        </figure>
-      </div>
-    </header>
-    <main>
-      <section class="p-4">
-        <div class="wrapper">
-          <form
-            id="paymentForm"
-            class="max-w-md m-auto p-4 bg-white rounded-lg"
-          >
-            <div class="wrapper">
-              <header>
-                <h1 class="font-bold text-2xl">Complete Payment</h1>
-              </header>
-              <div class="form-control">
-                <label for="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email-address"
-                  class="w-full rounded-md mt-1"
-                  required
-                />
-              </div>
-              <div class="form-control">
-                <label for="phone">Phone </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  class="w-full rounded-md mt-1"
-                  required
-                />
-              </div>
-              <div class="form-control">
-                <label for="amount">Amount</label>
-                <input
-                  type="number"
-                  id="amount"
-                  class="w-full rounded-md mt-1"
-                  required
-                />
-              </div>
-              <div class="form-control">
-                <label for="first-name">First Name</label>
-                <input
-                  type="text"
-                  id="first-name"
-                  class="w-full rounded-md mt-1"
-                />
-              </div>
-              <div class="form-control">
-                <label for="last-name">Last Name</label>
-                <input
-                  type="text"
-                  id="last-name"
-                  class="w-full rounded-md mt-1"
-                />
-              </div>
-              <div class="form-submit">
-                <button type="submit" class="cta">Pay</button>
-              </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45YE7QVX3S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-45YE7QVX3S');
+  </script>
+</head>
+
+<body class="bg-gray-100">
+  <header class="sticky top-0 w-full p-4">
+    <div class="wrapper max-w-6xl m-auto bg-white p-4 rounded-lg">
+      <figure>
+        <h1 class="font-extrabold text-red-500">Pay with 100Pay</h1>
+      </figure>
+    </div>
+  </header>
+  <main>
+    <section class="p-4">
+      <div class="wrapper">
+        <form id="paymentForm" class="max-w-md m-auto p-4 bg-white rounded-lg">
+          <div class="wrapper">
+            <header>
+              <h1 class="font-bold text-2xl">Complete Payment</h1>
+            </header>
+            <div class="form-control">
+              <label for="email">Email Address</label>
+              <input type="email" id="email-address" class="w-full rounded-md mt-1" required />
             </div>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!-- Wrapper for the 100Pay checkout modal -->
-    <div id="show100Pay"></div>
-
-    <footer class="p-4 bg-gray-800 text-gray-50">
-      <div class="wrapper text-center max-w-6xl m-auto">
-        <p>Made with ❤ by <a href="http://miracleio.me">Miracleio</a></p>
-        <p>
-          View source code on
-          <a
-            href="http://guthub.com/miracleonyenma/pay-with-100pay-example.git"
-          >
-            GitHub
-          </a>
-        </p>
+            <div class="form-control">
+              <label for="phone">Phone </label>
+              <input type="tel" id="phone" class="w-full rounded-md mt-1" required />
+            </div>
+            <div class="form-control">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" class="w-full rounded-md mt-1" required />
+            </div>
+            <div class="form-control">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" class="w-full rounded-md mt-1" />
+            </div>
+            <div class="form-control">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" class="w-full rounded-md mt-1" />
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="cta">Pay</button>
+            </div>
+          </div>
+        </form>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script>
-      const paymentForm = document.getElementById("paymentForm");
-      paymentForm.addEventListener("submit", payWith100pay, false);
-      function payWith100pay(e) {
-        e.preventDefault();
-        const email = document.getElementById("email-address").value;
-        const phone = document.getElementById("phone").value;
-        const amount = document.getElementById("amount").value;
-        const firstName = document.getElementById("first-name").value;
-        const lastName = document.getElementById("last-name").value;
+  <!-- Wrapper for the 100Pay checkout modal -->
+  <div id="show100Pay"></div>
 
-        shop100Pay.setup({
-          ref_id: "" + Math.floor(Math.random() * 1000000000 + 1),
-          api_key:
-            "LIVE;PK;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjYyOGIyMzdlMTlhYzUyMDAyYzU4ODU0ZCIsInVzZXJJZCI6IjYyOGIyMjhiMTlhYzUyMDAyYzU4ODUyNSIsImlhdCI6MTY1MzI4NTc1OH0.xbsD89ZxDffd6oTslQncQkIs0zAfGaiz8tOkCjLdgFs", // paste api key here
-          customer: {
-            user_id: "1", // optional
-            name: firstName + " " + lastName,
-            phone,
-            email,
-          },
-          billing: {
-            amount,
-            currency: "USD", // or any other currency supported by 100pay
-            description: "Test Payment",
-            country: "USA",
-            vat: 10, //optional
-            pricing_type: "fixed_price", // or partial
-          },
-          metadata: {
-            is_approved: "yes",
-            order_id: "OR2", // optional
-            charge_ref: "REF", // optionalm, you can add more fields
-          },
-          call_back_url: "http://localhost:8000/verifyorder/",
-          onClose: (msg) => {
-            alert("User closed payment modal.");
-          },
-          callback: (reference) => {
-            alert(`Transaction successful with id: ${reference}`);
-          },
-          onError: (error) => {
-            console.log(error);
-            alert("Sorry something went wrong pls try again.");
-          },
-        });
-      }
-    </script>
+  <footer class="p-4 bg-gray-800 text-gray-50">
+    <div class="wrapper text-center max-w-6xl m-auto">
+      <p>Made with ❤ by <a href="http://miracleio.me">Miracleio</a></p>
+      <p>
+        View source code on
+        <a href="http://guthub.com/miracleonyenma/pay-with-100pay-example.git">
+          GitHub
+        </a>
+      </p>
+    </div>
+  </footer>
 
-    <!-- <script src="https://raw.githubusercontent.com/shop100global/100pay-checkout-js/main/index.min.js"></script> -->
-    <!-- <script src="https://js.100pay.co/"></script> -->
-    <!-- <script src="./src/js/index.min.js"></script> -->
-    <script src="node_modules/@100pay-hq/checkout/index.min.js"></script>
-  </body>
+  <script>
+    const paymentForm = document.getElementById("paymentForm");
+    paymentForm.addEventListener("submit", payWith100pay, false);
+    function payWith100pay(e) {
+      e.preventDefault();
+      const email = document.getElementById("email-address").value;
+      const phone = document.getElementById("phone").value;
+      const amount = document.getElementById("amount").value;
+      const firstName = document.getElementById("first-name").value;
+      const lastName = document.getElementById("last-name").value;
+
+      shop100Pay.setup({
+        ref_id: "" + Math.floor(Math.random() * 1000000000 + 1),
+        api_key:
+          "LIVE;PK;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjYyOGIyMzdlMTlhYzUyMDAyYzU4ODU0ZCIsInVzZXJJZCI6IjYyOGIyMjhiMTlhYzUyMDAyYzU4ODUyNSIsImlhdCI6MTY1MzI4NTc1OH0.xbsD89ZxDffd6oTslQncQkIs0zAfGaiz8tOkCjLdgFs", // paste api key here
+        customer: {
+          user_id: "1", // optional
+          name: firstName + " " + lastName,
+          phone,
+          email,
+        },
+        billing: {
+          amount,
+          currency: "USD", // or any other currency supported by 100pay
+          description: "Test Payment",
+          country: "USA",
+          vat: 10, //optional
+          pricing_type: "fixed_price", // or partial
+        },
+        metadata: {
+          is_approved: "yes",
+          order_id: "OR2", // optional
+          charge_ref: "REF", // optionalm, you can add more fields
+        },
+        call_back_url: "http://localhost:8000/verifyorder/",
+        onClose: (msg) => {
+          alert("User closed payment modal.");
+        },
+        callback: (reference) => {
+          alert(`Transaction successful with id: ${reference}`);
+        },
+        onError: (error) => {
+          console.log(error);
+          alert("Sorry something went wrong pls try again.");
+        },
+      });
+    }
+  </script>
+
+  <!-- <script src="https://raw.githubusercontent.com/shop100global/100pay-checkout-js/main/index.min.js"></script> -->
+  <!-- <script src="https://js.100pay.co/"></script> -->
+  <!-- <script src="./src/js/index.min.js"></script> -->
+  <script src="./src/js/shop100Pay.js"></script>
+</body>
+
 </html>
