@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-package": "npx browserify src/shop100Pay.js -s shop100Pay > src/js/shop100Pay.js"
   },
   "keywords": [],
   "author": "",
