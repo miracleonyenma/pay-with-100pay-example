@@ -14,7 +14,7 @@ function payWith100pay(e) {
     shop100Pay.setup({
         ref_id: "" + Math.floor(Math.random() * 1000000000 + 1),
         api_key:
-            "LIVE;PK;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjYyOGIyMzdlMTlhYzUyMDAyYzU4ODU0ZCIsInVzZXJJZCI6IjYyOGIyMjhiMTlhYzUyMDAyYzU4ODUyNSIsImlhdCI6MTY1MzI4NTc1OH0.xbsD89ZxDffd6oTslQncQkIs0zAfGaiz8tOkCjLdgFs", // paste api key here
+            "LIVE;PK;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjYyOGIxYzdlMTlhYzUyMDAyYzU4ODQ2YSIsInVzZXJJZCI6IjYxY2VjZDNjNWU0NjM0MDAyZTg3YmU5NSIsImlhdCI6MTY1MzI4Mzk2Nn0.Y54T8kQxaAOvZjguvyRZKc7D_v2xpU0pSHBVwTNcRL8", // paste api key here
         customer: {
             user_id: "1", // optional
             name: firstName + " " + lastName,
